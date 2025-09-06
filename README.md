@@ -245,35 +245,22 @@ Add to your crontab for daily updates:
 
 ### Manual Deployment
 
-#### Backend (Heroku/Railway/Render)
+#### Frontend (Vercel)
 
-1. Set environment variables:
+1. Go to [Vercel](https://vercel.com).
+2. Import the `frontend` folder from your repo.
+3. Set environment variable `REACT_APP_API_URL` to your backend URL.
 
-   ```env
-   MONGODB_URI=your-mongodb-connection-string
-   PORT=3001
-   NODE_ENV=production
-   FRONTEND_URL=https://your-frontend-url.com
-   ```
+#### Backend & Scraper (Render)
 
-2. Deploy backend code
+1. Go to [Render](https://render.com).
+2. Create a new Web Service for `backend` (use `render.yaml`).
+3. Create a new Worker for `scraper` (use `render.yaml`).
+4. Set environment variable `MONGODB_URI` to your MongoDB Atlas URI.
 
-#### Frontend (Vercel/Netlify)
+#### Database
 
-1. Build the React app:
-
-   ```bash
-   cd frontend
-   npm run build
-   ```
-
-2. Set environment variables:
-
-   ```env
-   REACT_APP_API_URL=https://your-backend-url.com
-   ```
-
-3. Deploy the build folder
+- Use [MongoDB Atlas](https://www.mongodb.com/atlas) for cloud MongoDB.
 
 ## Configuration
 
