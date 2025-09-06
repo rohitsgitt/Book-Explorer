@@ -166,4 +166,20 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { BookScraper, Book };
+async function runScraper() {
+  const scraper = new BookScraper();
+
+  try {
+    await scraper.connectDB();
+    await scraper.scrapeAllBooks();
+    await scraper.getStats();
+    console.log('\nScraping completed successfully!');
+  } catch (error) {
+    console.error('Scraping failed:', error);
+  } finally {
+    await mongoose.connection.close();
+    console.log('Database connection closed');
+  }
+}
+
+module.exports = runScraper;
