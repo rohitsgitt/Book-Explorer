@@ -1,0 +1,27 @@
+{
+  "name": "book-explorer-scraper",
+  "version": "1.0.0",
+  "description": "Web scraper for Books to Scrape website",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js",
+    "dev": "nodemon scraper.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "mongoose": "^8.0.0",
+    "dotenv": "^16.3.1",
+    "@remix-run/dev":"2.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "scraping",
+    "books",
+    "mongodb"
+  ],
+  "author": "Book Explorer Team",
+  "license": "MIT"
+}

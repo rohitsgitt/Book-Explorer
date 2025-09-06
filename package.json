@@ -1,0 +1,31 @@
+{
+  "name": "book-explorer",
+  "version": "1.0.0",
+  "description": "Full-stack book exploration application with web scraping",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install && cd ../scraper && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "start": "cd backend && npm start",
+    "scrape": "cd scraper && npm start",
+    "build": "cd frontend && npm run build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:scrape": "docker-compose exec scraper npm start"
+  },
+  "keywords": [
+    "web-scraping",
+    "react",
+    "node.js",
+    "express",
+    "mongodb",
+    "books",
+    "full-stack"
+  ],
+  "author": "Book Explorer Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
