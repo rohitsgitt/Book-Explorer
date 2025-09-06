@@ -1,12 +1,12 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import BookDetails from './pages/BookDetails';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       {/* Header */}
       <header className="header">
         <div className="container">
@@ -59,7 +59,7 @@ function App() {
           </p>
         </div>
       </footer>
-    </div>
+    </Router>
   );
 }
 
