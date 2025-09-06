@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3002;
 
-// Import your scraping logic
-const runScraper = require('./scraper'); // Adjust path if needed
+const runScraper = require('./scraper');
 
-app.get('/scrape', async (req, res) => {
+app.get('/scraper', async (req, res) => {
   try {
     await runScraper();
     res.send('Scraping completed!');
@@ -15,7 +14,7 @@ app.get('/scrape', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Scraper service is running. Visit /scrape to start scraping.');
+  res.send('Scraper service is running. Visit /scraper to start scraping.');
 });
 
 app.listen(PORT, () => {
